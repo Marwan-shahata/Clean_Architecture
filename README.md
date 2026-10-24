@@ -39,7 +39,7 @@ Unhandled exceptions return `500` as `ProblemDetails`.
 ## Prerequisites
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
-- SQL Server 2019+ (local install, SQL Server Express, or Docker)
+- SQL Server 2019+ (local install, SQL Server Express)
 - EF Core CLI tool: `dotnet tool install --global dotnet-ef`
 
 ## SQL Server configuration
@@ -47,13 +47,6 @@ Unhandled exceptions return `500` as `ProblemDetails`.
 The connection string is `ConnectionStrings:DefaultConnection` in
 `src/ProductsApi.Api/appsettings.json`. The default targets SQL Server on `localhost,1433` with the
 `sa` user.
-
-Start SQL Server with Docker:
-
-```bash
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Your_strong_Passw0rd" \
-  -p 1433:1433 --name products-sql -d mcr.microsoft.com/mssql/server:2022-latest
-```
 
 Do not commit real credentials. Override the connection string without editing files:
 
